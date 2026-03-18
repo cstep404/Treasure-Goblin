@@ -8,8 +8,8 @@ def gen_num_of_items():
     return random.randint(1, 5)
 
 def main():
-    item_types = ['head', 'amulet', 'shoulders', 'chest', 'hands', 'belt', 'ring', 'legs', 'feet', 'weapon']
-    quality_types = ['common', 'uncommon', 'magic', 'rare', 'unique']
+    item_types = ['Helm', 'Amulet', 'Shoulders', 'Chest', 'Hands', 'Belt', 'Ring', 'Legs', 'Feet', 'Weapon']
+    quality_types = ['Common', 'Uncommon', 'Magic', 'Rare', 'Unique']
     item_prefix = [
             'Colossus',
             'Defiant',
@@ -20,13 +20,13 @@ def main():
     item_suffix = [
             'Scorn',
             'Intellect',
-            'Legend',
-            'Knight',
-            'Druid'
+            'the Mountain',
+            'the Knight',
+            'the Druid'
     ]
     menu = True
     while menu:
-        user_input = input('Welcome to Treasure Goblin! Press 1 to start or q to quit: ')
+        user_input = input('The Treasure Goblin cackles and says, "Ready for treasure? Press 1 to begin or q to quit!": ')
         if user_input != '1' and user_input != 'q':
             print(f'Please choose a valid option.')
         if user_input == 'q':
@@ -36,7 +36,6 @@ def main():
             menu = False
 
     player_num_of_items = gen_num_of_items()
-    print(f'Number of items to be generated: {player_num_of_items}')
 
     # the loop that runs X many times based on number of items
     for i in range(player_num_of_items):
@@ -47,7 +46,8 @@ def main():
             'Prefix': random.choice(item_prefix),
             'Suffix': random.choice(item_suffix)
         }
+        print(f'The Treasure Goblin laughs, "Here\'s you\'re reward!": {PLAYER_ITEMS[f'Item {i + 1}']['Prefix']} {PLAYER_ITEMS[f'Item {i + 1}']['Type']} of {PLAYER_ITEMS[f'Item {i + 1}']['Suffix']}, a {PLAYER_ITEMS[f'Item {i + 1}']['Quality']} quality item!')
 
-    print(PLAYER_ITEMS)
+    
 
 main()
