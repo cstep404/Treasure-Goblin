@@ -10,6 +10,20 @@ def gen_num_of_items():
 def main():
     item_types = ['head', 'amulet', 'shoulders', 'chest', 'hands', 'belt', 'ring', 'legs', 'feet', 'weapon']
     quality_types = ['common', 'uncommon', 'magic', 'rare', 'unique']
+    item_prefix = [
+            'Colossus',
+            'Defiant',
+            'Heavenly',
+            'Truthful',
+            'Celestial'
+    ]
+    item_suffix = [
+            'Scorn',
+            'Intellect',
+            'Legend',
+            'Knight',
+            'Druid'
+    ]
     menu = True
     while menu:
         user_input = input('Welcome to Treasure Goblin! Press 1 to start or q to quit: ')
@@ -29,7 +43,9 @@ def main():
         # create a sub dict to add to player_items containing the item #, quality, and type
         PLAYER_ITEMS[f'Item {i + 1}'] = { 
             'Quality': random.choice(quality_types), 
-            'Type': random.choice(item_types) 
+            'Type': random.choice(item_types),
+            'Prefix': random.choice(item_prefix),
+            'Suffix': random.choice(item_suffix)
         }
 
     print(PLAYER_ITEMS)
