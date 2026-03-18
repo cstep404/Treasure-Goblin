@@ -27,7 +27,7 @@ def main():
     # the loop that runs X many times based on number of items
     for i in range(player_num_of_items):
         # create a sub dict to add to player_items containing the item #, quality, and type
-        PLAYER_ITEMS[f'Item {i}'] = { 
+        PLAYER_ITEMS[f'Item {i + 1}'] = { 
             'Quality': random.choice(quality_types), 
             'Type': random.choice(item_types) 
         }
